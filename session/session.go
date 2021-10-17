@@ -27,7 +27,7 @@ func (c *Session) InitSession() *scs.SessionManager {
 		minutes = 60
 	}
 
-	// should cookies persist ?
+	// should cookies persist?
 	if strings.ToLower(c.CookiePersist) == "true" {
 		persist = true
 	}
@@ -49,12 +49,14 @@ func (c *Session) InitSession() *scs.SessionManager {
 	// which session store?
 	switch strings.ToLower(c.SessionType) {
 	case "redis":
+
 	case "mysql", "mariadb":
+
 	case "postgres", "postgresql":
+
 	default:
 		// cookie
 	}
 
 	return session
-
 }
